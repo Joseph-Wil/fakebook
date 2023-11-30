@@ -14,20 +14,38 @@
         <script src="./assets/script/index.js" type="module"></script>
     </head>
     <body>
-        <header>
-            <div class="container">
+        <header class="header">
+            <div class="container flex">
                 <h1>Fakebook</h1>
                 <nav>
                     <ul>
-                        <li><a href="">Friends</a></li>
-                        <li><a href="">Pages</a></li>
-                        <li><a href="">Groups</a></li>
-                        <li><a href="">My ads</a></li>
-                        <li><a href="">Settings</a></li>
+                        <li><a href="#">Friends</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Groups</a></li>
+                        <li><a href="#">My ads</a></li>
+                        <li><a href="#">Settings</a></li>
                     </ul>
                 </nav>
-                <div class="profile"><images src="./assets/image/penguin.jpg" alt="Profile picture"></div>
+                <div class="profile"><img src="./assets/image/penguin.jpg" alt="Profile picture"></div>
             </div>
         </header>
+        <main>
+            <div class="container">
+                <div class="text-box">
+                    <input type="text" class="input" placeholder="What's new, Joseph?">
+                    <div class="image-upload">
+                        <input type="file" id="image" accept="image/*">
+                        <label for="image" class="image-icon"><i class="fa-regular fa-image"></i></label>
+                    </div>
+                    <input type="button" class="post" value="Post">
+                </div>
+            
+                <div class="grid-output">
+                    <header class="acc-header">
+                        <div class="user-input"></div>
+                    </header>
+                </div>
+            </div>
+        </main>
     </body>
 </html>

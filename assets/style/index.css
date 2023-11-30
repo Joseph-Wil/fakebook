@@ -3,6 +3,7 @@
 :root {
     --app-dark-bg: #171A22;
     --app-light-bg: #1f232d;
+    --app-fakebook: #0866FF;
 }
 
 
@@ -26,9 +27,155 @@ body {
     min-height: 100vh;
 }
 
-header {
+/***    Header  ***/
+
+.header {
     height: 60px;
-    width: 100%;
     background-color: var(--app-light-bg);
+}
+
+.flex {
+    display: flex;
+}
+
+h1 {
+    font-size: 24px;
+    width: 20%;
+    line-height: 60px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+nav {
+    text-align: center;
+    padding: 0 25px;
+    line-height: 60px;
+    width: 80%;
+}
+
+nav ul {
+    font-size: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;   
+    line-height: 60px;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 20px;
+    text-decoration: none;
     color: #fff;
 }
+
+.profile {
+    padding: 10px 50px;
+}
+
+.profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 60px;
+}
+
+/***    Body    ***/
+
+
+.text-box {
+    position: relative;
+    background-color: var(--app-light-bg);
+    width: 50%;
+    height: 15rem;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.input {
+    color: #fff;
+    background-color: var(--app-light-bg);
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+}
+
+input[type="button"] {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    width: 75px;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--app-fakebook);
+    color: #fff;
+}
+
+.grid-output {
+    display: grid;
+    margin: 40px auto;
+    grid-gap: 30px 0;
+    width: 50%;
+    height: 30rem;
+    background-color: var(--app-dark-bg);
+    color: #fff;
+    border-radius: 10px;
+}
+
+#image {
+    display: none;
+}
+
+.image-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px 15px;
+    font-size: 20px;
+    color: #fff;
+}
+
+/***    Hover   ***/
+
+input[type="button"]:hover {
+    background-color: #0055e0;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.image-icon:hover {
+    cursor: pointer;
+    color: #0055e0;
+    transition: 0.2 ease-in-out;
+}
+
+/***    Output Box  ***/
+
+.acc-header {
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    color: var(--app-dark-bg);
+    font-size: 18px;
+}
+
+.user-input {
+    position: absolute;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    color: #fff;
+    background-color: var(--app-light-bg);
+    padding: 15px;
+    letter-spacing: 1px;
+    border: solid 1px transparent;
+    transition: border 0.1s ease-in-out; 
+    line-height: 30px;
+}
+
