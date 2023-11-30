@@ -34,15 +34,16 @@
                 <div class="text-box">
                     <input type="text" class="input" placeholder="What's new, Joseph?">
                     <div class="image-upload">
-                        <input type="file" id="image" accept="image/*">
+                        <input type="file" id="image" accept="image/*" onchange="previewImage()">
                         <label for="image" class="image-icon"><i class="fa-regular fa-image"></i></label>
+                        <span class="imageName"></span>
                     </div>
                     <input type="button" class="post" value="Post">
                 </div>
-            
                 <div class="grid-output">
-                    <header class="acc-header">
-                        <div class="user-input"></div>
+                    <header class="set-header">
+                        <div class="profile"><img src="./assets/image/penguin.jpg" alt="Profile Picture"></div>
+                        <div></div>
                     </header>
                 </div>
             </div>

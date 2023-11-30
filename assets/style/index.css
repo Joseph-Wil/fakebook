@@ -4,6 +4,7 @@
     --app-dark-bg: #171A22;
     --app-light-bg: #1f232d;
     --app-fakebook: #0866FF;
+    --app-hover: #0055e0;
 }
 
 
@@ -76,8 +77,8 @@ nav ul li a {
 }
 
 .profile img {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     line-height: 60px;
 }
@@ -140,28 +141,42 @@ input[type="button"] {
     color: #fff;
 }
 
+.imageName {
+    display: flex;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 12px;
+}
 /***    Hover   ***/
 
 input[type="button"]:hover {
-    background-color: #0055e0;
+    background-color: var(--app-hover);
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }
 
 .image-icon:hover {
     cursor: pointer;
-    color: #0055e0;
+    color: var(--app-hover);
     transition: 0.2 ease-in-out;
 }
 
 /***    Output Box  ***/
 
+.header-name {
+    font-size: 18px;
+    color: var(--app-dark-bg);
+}
+
 .acc-header {
     position: relative;
     display: flex;
     background-color: #fff;
+    justify-content: space-between;
     color: var(--app-dark-bg);
     font-size: 18px;
+    width: 100%;
+    min-height: 10rem;
 }
 
 .user-input {
