@@ -40,11 +40,10 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     width: 20%;
     line-height: 60px;
     color: #fff;
-    text-transform: uppercase;
 }
 
 nav {
@@ -67,13 +66,14 @@ nav ul li {
 nav ul li a {
     display: inline-block;
     padding: 0 15px;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     color: #fff;
 }
 
 .profile {
     padding: 10px 50px;
+    line-height: 60px;
 }
 
 .profile img {
@@ -120,11 +120,10 @@ input[type="button"] {
 .grid-output {
     display: grid;
     margin: 40px auto;
-    grid-gap: 30px 0;
+    grid-gap: 20px 0;
     width: 50%;
-    height: 30rem;
+    min-height: 25rem;
     background-color: var(--app-dark-bg);
-    color: #fff;
     border-radius: 10px;
 }
 
@@ -134,6 +133,7 @@ input[type="button"] {
 
 .image-icon {
     position: absolute;
+    display: flex;
     bottom: 0;
     left: 0;
     margin: 10px 15px;
@@ -141,12 +141,12 @@ input[type="button"] {
     color: #fff;
 }
 
-.imageName {
-    display: flex;
-    margin-left: 10px;
+span {
     color: #fff;
-    font-size: 12px;
+    font-size: 10px;
+    padding: 5px;
 }
+
 /***    Hover   ***/
 
 input[type="button"]:hover {
@@ -161,36 +161,73 @@ input[type="button"]:hover {
     transition: 0.2 ease-in-out;
 }
 
+nav ul li a:hover {
+    cursor: pointer;
+    color: var(--app-hover);
+    transition: 0.2 ease-in-out;
+}
+
 /***    Output Box  ***/
 
-.header-name {
+.output-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     font-size: 18px;
-    color: var(--app-dark-bg);
+    height: auto;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.header-content {
+    display: flex;
+} 
+
+.header-image {
+    background-image: url(../image/penguin.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 12%;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .acc-header {
-    position: relative;
-    display: flex;
-    background-color: #fff;
-    justify-content: space-between;
-    color: var(--app-dark-bg);
-    font-size: 18px;
-    width: 100%;
-    min-height: 10rem;
+    color: #000;
+    width: 90%;
+    height: 4rem;
+    margin-left: 10px;
+}
+
+.header-date {
+    color: #000;
+    width: 50%;
+    margin-left: auto;
+    text-align: right;
 }
 
 .user-input {
-    position: absolute;
+    margin-bottom: 20px;
+    text-align: left;
     font-size: 16px;
     width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    color: #fff;
-    background-color: var(--app-light-bg);
-    padding: 15px;
+    height: 8rem;
+    color: #000;
     letter-spacing: 1px;
-    border: solid 1px transparent;
-    transition: border 0.1s ease-in-out; 
-    line-height: 30px;
 }
 
+.user-input-img {
+    width: 100%;
+    max-height: 12rem;
+    border-radius: 10px;
+}
+
+.output-text {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    text-align: left;
+}

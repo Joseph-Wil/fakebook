@@ -1,37 +1,37 @@
 'use strict';
 
-import { onEvent, getElement, select, create } from "./utils.js";
-import { User } from "./user.js";
+import { onEvent, select, create } from "./utils.js";
+import { Subscriber } from "./subscriber.js";
 
 // Variables
 
-const userInput = select('.input');
+const userInputElement = select('.input');
 const postButton = select('.post');
 const userOutput = select('.grid-output');
-const insertImage = getElement('#image');
 const imageName = select('.imageName');
+const insertImage = select('.image');
 
 
 // functions
 
-function userPost() {
-    const userInputvalue = userInput.value.trim();
+function userPost(includeImage) {
+    const userInputValue = userInputElement.value.trim();
 
-    if(userInputvalue !== '') {
-        const postElement = create('div');
-        postElement.classList.add('user-post');
+    if (userInputValue !== '') {
+        const outputDiv = setHeader();
 
-        const userInputDisplay = create('p');
-        userInputDisplay.innerText = userInputvalue;
+        const postContent = document.createElement('div');
+        postContent.textContent = userInputValue;
+        postContent.className = 'output-text';
 
-        postElement.appendChild(userInputDisplay);
+        outputDiv.appendChild(postContent);
 
-        userOutput.appendChild(postElement);
+        if (includeImage) {
+            let file = insertImage.files[0];
+            addUserImg(outputDiv, file);
+        }
 
-        userInputvalue = '';
-        insertImage.value = '';
-
-        setHeader();
+        userOutput.appendChild(outputDiv);
     }
 }
 
@@ -45,19 +45,59 @@ function imagePreview() {
     }
 }
 
-function setHeader() {
-    const date = getDate();
-    const headerDate = 
+function addUserImg(outputDiv, file) {
+    if (file) {
+        const userImage = document.createElement('img');
+        userImage.src = URL.createObjectURL(file);
+        userImage.alt = 'User selected image';
+        userImage.className = 'user-input-img';
+        outputDiv.appendChild(userImage);
+    }
+}
 
+function setHeader() {
+    const userFirstName = 'Joseph';
+    const userLastName = 'Terrado';
+    const userFullName = `${userFirstName} ${userLastName}`;
+    const currentDate = getDate();
+
+    const outputDiv = document.createElement('div');
+    outputDiv.className = 'output-box';
+
+    const headerContent = document.createElement('div');
+    headerContent.className = 'header-content'; 
+
+    const headerImage = document.createElement('div');
+    headerImage.className = 'header-image';
+    headerContent.appendChild(headerImage);
+    
+    const headerName = document.createElement('div');
+    headerName.className = 'acc-header';
+    headerName.textContent = userFullName;
+    headerContent.appendChild(headerName);
+
+    const headerDate = document.createElement('div');
+    headerDate.className = 'header-date';
+    headerDate.textContent = currentDate;
+    headerContent.appendChild(headerDate);
+
+    outputDiv.appendChild(headerContent);
+
+    return outputDiv;
 }
 
 function getDate() {
     const currentDate = new Date();
     const currentMonth = currentDate.toLocaleString('en-US', { month: 'short' });
     const currentDay = currentDate.getDate();
-    const currentYear = currentYear.getFullYear();
+    const currentYear = currentDate.getFullYear();
 
     return `${currentMonth} ${currentDay}, ${currentYear}`;
+}
+
+function hideText() {
+    imageName.innerText = '';
+    userInputElement.value = '';
 }
 
 // Event functions
@@ -67,6 +107,6 @@ onEvent('change', insertImage, function() {
 });
 
 onEvent('click', postButton, function() {
-    userPost();
-    setHeader();
-})
+    userPost(true);
+    hideText();
+});

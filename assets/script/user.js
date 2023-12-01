@@ -1,7 +1,5 @@
 'use strict';
 
-import { Person } from "./subscriber.js";
-
 export class User {
     #id;
     #name;

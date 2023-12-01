@@ -1,6 +1,8 @@
 'use strict';
 
-export class Person extends User {
+import { User } from "./user.js";
+
+export class Subscriber extends User {
     #pages;
     #groups;
     #canMonetize;
